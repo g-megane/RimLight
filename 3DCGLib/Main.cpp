@@ -28,7 +28,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     directX.initDevice(w);
 
     // ViewMatrixの初期化
-    Vector3 eye = Vector3(0.0f, 1.0f, -5.0f); // カメラの座標
+    Vector3 eye = Vector3(0.0f, 2.0f, -5.0f); // カメラの座標
     Vector3 at  = Vector3(0.0f, 1.0f,  0.0f); // 注視対象
     Vector3 up  = Vector3::UP;                // 現在のワールド座標の上方向
     auto view   = Matrix::LookAtLH(eye, at, up);
@@ -41,7 +41,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
     directX.setProjectionMatrix(projection);
     
     // モデルの作成
-    Model model = Model();
+    Model model = Model(36);
     Matrix world;
     world = Matrix::Identify;
 
